@@ -1,10 +1,10 @@
 import yagmail#在网上找的发送邮件的模块，按照格式进行设置就可以进行发送邮件
 import time
 def email():
-    yag = yagmail.SMTP(user='你的邮箱',password='你的邮箱的校验码，可以搜一下qq邮箱校验码申请',host='smtp.qq.com')
+    yag = yagmail.SMTP(user='$user',password='$password',host='smtp.qq.com')
     #绑定邮箱账号跟校验码，host设置qq邮箱的smtp服务器域名
     contents=['邮件发送成功！！']#邮件内容设置
-    yag.send('改成要发送的邮箱','邮件头',contents)#绑定发送对象以及邮件主题
+    yag.send('$target','邮件头',contents)#绑定发送对象以及邮件主题
 
 n=int(input("请输入发送次数:"))#设置发邮件次数，使用for循环进行控制
 t=int(input("请输入时间间隔:"))#设置发送间隔，以秒为单位
